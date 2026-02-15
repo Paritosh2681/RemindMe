@@ -13,17 +13,17 @@
       }
     }
   ],
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "/server/src/index.js"
+      "src": "/api/(.*)",
+      "dest": "/server/src/index.js"
     },
     {
-      "source": "/(.*)",
-      "destination": "/client/dist/$1"
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  }
+  ]
 }
